@@ -1,16 +1,13 @@
 const express = require("express");
 const path = require("path");
 
-const sqlite3 = require("sqlite3");
 const { open } = require("sqlite");
+const sqlite3 = require("sqlite3");
 
 const dbPath = path.join(__dirname, "todoApplication.db");
 const app = express();
 
 app.use(express.json());
-
-const bcrypt = require("bcrypt");
-const jsonwebtoken = require("jsonwebtoken");
 
 const format = require("date-fns/format");
 const isMatch = require("date-fns/isMatch");
@@ -117,7 +114,7 @@ app.get("/todos/", async (request, response) => {
           status === "IN PROGRESS" ||
           status === "DONE"
         ) {
-          todoQuery = `SELECT * FROM todo WHERE priority ='${priority}' AND status='${status}';`;
+          todoQuery = `SELECT * FROM todo WHERE status='${status}' AND  priority ='${priority}';`;
           data = await db.all(todoQuery);
           response.send(data.map((each) => convertDatabaseIntoResponse(each)));
         } else {
@@ -211,8 +208,6 @@ app.get("/todos/", async (request, response) => {
         SELECT * FROM todo;`;
       data = await db.all(todoQuery);
       response.send(data.map((each) => convertDatabaseIntoResponse(each)));
-
-      break;
   }
 });
 

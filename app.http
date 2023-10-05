@@ -27,7 +27,7 @@ GET http://localhost:3001/todos/?category=LEARNING&priority=HIGH
 ### 
 
 
-GET http://localhost:3001/todos/4/ 
+GET http://localhost:3001/todos/2/ 
 
 ### 
 
@@ -79,5 +79,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3001/todos/4 
-
+DELETE http://localhost:3001/todos/2
