@@ -292,3 +292,12 @@ app.put("/todos/:todoId/", async (request, response) => {
     response.send("Due Date Updated");
   }
 });
+
+app.delete("/todos/:todoId/", async (request, response) => {
+  const { todoId } = request.params;
+  const DeleteTodoQuery = `DELETE  FROM todo WHERE id=${todoId};`;
+  await db.run(DeleteTodoQuery);
+  response.send("Todo Deleted");
+});
+
+module.exports = app;
