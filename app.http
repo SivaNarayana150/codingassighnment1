@@ -1,0 +1,79 @@
+GET http://localhost:3001/todos/?status=TO%20DO
+
+### 
+
+GET http://localhost:3001/todos/?priority=HIGH 
+
+###
+
+GET http://localhost:3001/todos/?category=WORK&status=DONE 
+
+### 
+
+GET http://localhost:3001/todos/?search_q=Buy
+
+###
+
+GET http://localhost:3001/todos/?category=WORK&status=DONE
+
+### 
+
+GET http://localhost:3001/todos/?category=HOME  
+
+### 
+
+GET http://localhost:3001/todos/?category=LEARNING&priority=HIGH
+
+### 
+
+
+GET http://localhost:3001/todos/4/ 
+
+### 
+
+GET http://localhost:3001/agenda/?date=2021-12-12
+
+### 
+
+
+POST http://localhost:3001/todos/ 
+
+### 
+
+
+PUT http://localhost:3001/todos/2/ 
+Content-Type: application/json 
+
+{ "status": "DONE" }
+
+### 
+
+PUT http://localhost:3001/todos/2/ 
+Content-Type: application/json 
+
+{ "priority": "HIGH" }
+
+
+### 
+
+
+PUT http://localhost:3001/todos/2/ 
+Content-Type: application/json 
+
+{
+"todo": "Clean the garden"
+}
+#### 
+
+PUT http://localhost:3001/todos/2/ 
+Content-Type: application/json 
+
+{ "category": "LEARNING" }
+
+### 
+
+PUT http://localhost:3001/todos/2/ 
+Content-Type: application/json 
+
+ {"dueDate": "2021-01-12" }
+
